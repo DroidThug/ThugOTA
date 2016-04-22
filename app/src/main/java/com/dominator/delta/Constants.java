@@ -1,38 +1,38 @@
 /*
- * This file is part of ThugDelta.
+ * This file is part of DominatorDelta.
  *
- * ThugDelta is free software: you can redistribute it and/or modify
+ * DominatorDelta is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * ThugDelta is distributed in the hope that it will be useful,
+ * DominatorDelta is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with ThugDelta. If not, see <http://www.gnu.org/licenses/>.
+ * along with DominatorDelta. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package delta.out386.thugota;
+package com.dominator.delta;
 
 public class Constants {
     final static String TAG = "ThugOTA";
 
-    final static String ACTION_CLOSE_DIALOG = "delta.out386.thugota.CLOSE_DIALOG";
-    final static String ACTION_APPLY_DIALOG = "delta.out386.thugota.APPLY_DIALOG";
-    final static String GENERIC_DIALOG = "delta.out386.thugota.GENERIC_DIALOG";
-    final static String PROGRESS_DIALOG = "delta.out386.thugota.PROGRESS_DIALOG";
-    final static String ACTION_NOT_ROM_DIALOG = "delta.out386.thugota.NOT_ROM_DIALOG";
-    final static String AUTO_UPDATE = "delta.out386.thugota.AUTO_UPDATE";
-    final static String NO_ROMS = "delta.out386.thugota.NO_ROMS";
+    final static String ACTION_CLOSE_DIALOG = "com.dominator.delta.CLOSE_DIALOG";
+    final static String ACTION_APPLY_DIALOG = "com.dominator.delta.APPLY_DIALOG";
+    final static String GENERIC_DIALOG = "com.dominator.delta.GENERIC_DIALOG";
+    final static String PROGRESS_DIALOG = "com.dominator.delta.PROGRESS_DIALOG";
+    final static String ACTION_NOT_ROM_DIALOG = "com.dominator.delta.NOT_ROM_DIALOG";
+    final static String AUTO_UPDATE = "com.dominator.delta.AUTO_UPDATE";
+    final static String NO_ROMS = "com.dominator.delta.NO_ROMS";
 
-    final static String PROGRESS = "delta.out386.thugota.PROGRESS";
-    final static String DIALOG_MESSAGE = "delta.out386.thugota.DIALOG_MESSAGE";
-    final static String GENERIC_DIALOG_MESSAGE = "delta.out386.thugota.GENERIC_DIALOG_MESSAGE";
-    final static String AUTO_UPDATE_BASE = "delta.out386.thugota.AUTO_UPDATE_BASE";
-    final static String AUTO_UPDATE_DELTA = "delta.out386.thugota.AUTO_UPDATE_DELTA";
+    final static String PROGRESS = "com.dominator.delta.PROGRESS";
+    final static String DIALOG_MESSAGE = "com.dominator.delta.DIALOG_MESSAGE";
+    final static String GENERIC_DIALOG_MESSAGE = "com.dominator.delta.GENERIC_DIALOG_MESSAGE";
+    final static String AUTO_UPDATE_BASE = "com.dominator.delta.AUTO_UPDATE_BASE";
+    final static String AUTO_UPDATE_DELTA = "com.dominator.delta.AUTO_UPDATE_DELTA";
 
     /**
      * Information about the supported rom.

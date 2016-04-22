@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ThugOTA</string>
+    <string name="app_name">Dominator Delta</string>
 
     <string name="title_section1">Auto Apply</string>
     <string name="title_section2">Roms</string>
@@ -10,5 +10,5 @@
     <string name="title_section7">About</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="author">Written by Ritayan Chakraborty (out386).\nThanks to Shreesha Murthy and Călin Neamțu for motivation.\nLibraries used:</string>
+    <string name="author">Written by Ritayan Chakraborty (out386).\nThanks to Shreesha Murthy and Călin Neamțu for motivation.\nYureka support by Abhishek Aggarwal\nLibraries used:</string>
 </resources>

@@ -1,4 +1,4 @@
-package delta.out386.thugota;
+package com.dominator.delta;
 
 
 import android.app.Activity;
