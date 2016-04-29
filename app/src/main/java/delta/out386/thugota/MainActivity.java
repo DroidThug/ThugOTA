@@ -20,6 +20,7 @@
 
 package delta.out386.thugota;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -28,6 +29,8 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +52,9 @@ public class MainActivity extends Activity
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private String [] mDrawerItems;
-    private Toolbar toolbar;
+
+    final int WRITE_STORAGE_PERMISSION = 1;
+    final int READ_STORAGE_PERMISSION = 1;
 
     BroadcastReceiver applyReciever = new BroadcastReceiver() {
         @Override
@@ -84,7 +89,7 @@ public class MainActivity extends Activity
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setActionBar(toolbar);
         mDrawerItems = getResources().getStringArray(R.array.drawer_items);
         setTitle(mDrawerItems[0]);
@@ -109,14 +114,23 @@ public class MainActivity extends Activity
         }
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, new AutoApplyFragment().newInstance())
+                .replace(R.id.content_frame, AutoApplyFragment.newInstance())
                 .commit();
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_STORAGE_PERMISSION);
+        }
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, READ_STORAGE_PERMISSION);
+        }
     }
 
     @Override
     public void onRequestPermissionsResult(int code, String[] permissions, int[] result) {
         if(result.length > 0 && result[0] == PackageManager.PERMISSION_GRANTED)
         {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.content_frame, AutoApplyFragment.newInstance())
+                    .commit();
             /*FragmentManager fragmentManager = getFragmentManager();
             BaseFragment fragment = BaseFragment.newInstance(1);
             View mFragmentContainerView = findViewById(R.id.navigation_drawer);
@@ -176,7 +190,7 @@ public class MainActivity extends Activity
     private class DrawerAdapter extends ArrayAdapter<String> {
         private String [] items;
         public DrawerAdapter(Context context, int resource, String [] items) {
-            super(context,resource,items);
+            super(context, resource, items);
             this.items = items;
         }
         @Override
